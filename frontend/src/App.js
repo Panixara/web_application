@@ -1,27 +1,23 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from './Login'; // Assuming you have a Login component
-import Dashboard from './Dashboard'; // Assuming you have a Dashboard component
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './Login';  // Your login component
+import Dashboard from './Dashboard/Dashboard';  // Your Dashboard component
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    setIsAuthenticated(true); // Simulate a successful login
+    setIsAuthenticated(true);  // Set authentication state to true on successful login
   };
 
   return (
     <Router>
       <Routes>
-        {/* Route for login page */}
         <Route path="/" element={<Login onLogin={handleLogin} />} />
-        
-        {/* Protected route for dashboard */}
-        {isAuthenticated && (
-          <Route path="/dashboard" element={<Dashboard />} />
-        )}
-        
-        {/* You can add more routes here */}
+        <Route
+          path="/dashboard"
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}  // Redirect to login if not authenticated
+        />
       </Routes>
     </Router>
   );
