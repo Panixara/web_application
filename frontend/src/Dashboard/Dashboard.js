@@ -1,12 +1,15 @@
+// Dashboard.js
 import React from 'react';
+import './Dashboard.css';  // Ensure this file exists in the same folder as Dashboard.js
 
-const Dashboard = () => {
+function Dashboard() {
   return (
-    <div>
+    <div className="dashboard">
       <h1>Welcome to the Dashboard</h1>
-      <p>This is the dashboard page after logging in.</p>
+      <p>This is the dashboard page.</p>
+      {/* You can add more content here */}
     </div>
   );
-};
+}
 
 export default Dashboard;

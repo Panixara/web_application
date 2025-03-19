@@ -1,35 +1,13 @@
+// index.js
 import React from 'react';
+import ReactDOM from 'react-dom/client';  // Important: use 'react-dom/client'
 import './index.css';
-import App from './App'; // นำเข้า App จากไฟล์ App.js
-import ReactDOM from 'react-dom/client'; // Make sure to import from 'react-dom/client'
+import App from './App';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));  // Create root
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);   
-
-$('#login-button').click(function(){
-  $('#login-button').fadeOut("slow",function(){
-    $("#container").fadeIn();
-    TweenMax.from("#container", .4, { scale: 0, ease:Sine.easeInOut});
-    TweenMax.to("#container", .4, { scale: 1, ease:Sine.easeInOut});
-  });
-});
-
-$(".close-btn").click(function(){
-  TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
-  TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
-  $("#container, #forgotten-container").fadeOut(800, function(){
-    $("#login-button").fadeIn(800);
-  });
-});
-
-/* Forgotten Password */
-$('#forgotten').click(function(){
-  $("#container").fadeOut(function(){
-    $("#forgotten-container").fadeIn();
-  });
-});
+  </React.StrictMode>
+);

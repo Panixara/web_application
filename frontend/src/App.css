@@ -1,0 +1,40 @@
+import React, { useState, useEffect } from 'react';
+import Login from './Login';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Dashboard from './Dashboard/Dashboard';
+
+function App() {
+  // Initialize isLoggedIn based on localStorage
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem('isLoggedIn') === 'true'; // Check if user is logged in
+  });
+
+  // Handle login logic
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true'); // Save login state to localStorage
+  };
+
+  // Handle logout logic
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', 'false'); // Remove login state from localStorage
+  };
+
+  return (
+    <Router>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Login onLogin={handleLogin} />} 
+        />
+        <Route 
+          path="/dashboard" 
+          element={isLoggedIn ? <Dashboard onLogout={handleLogout} /> : <Navigate to="/" />} 
+        />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

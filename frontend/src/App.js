@@ -1,26 +1,12 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login';  // Your login component
-import Dashboard from './Dashboard/Dashboard';  // Your Dashboard component
+import React from 'react';
 
-const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const handleLogin = () => {
-    setIsAuthenticated(true);  // Set authentication state to true on successful login
-  };
-
+function Dashboard({ onLogout }) {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login onLogin={handleLogin} />} />
-        <Route
-          path="/dashboard"
-          element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}  // Redirect to login if not authenticated
-        />
-      </Routes>
-    </Router>
+    <div>
+      <h1>Welcome to the Dashboard!</h1>
+      <button onClick={onLogout}>Logout</button>
+    </div>
   );
-};
+}
 
-export default App;
+export default Dashboard;
