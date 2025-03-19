@@ -1,216 +1,105 @@
-html { 
-  background: url(http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-img{
-  display: block;
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
   margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: rgb(255, 255, 255, 0.6);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 15px;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
   width: 100%;
-  height: auto;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-
-#login-button{
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 30px;
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(3,3,3,.8);
-  overflow: hidden;
-  opacity: 0.4;
-  box-shadow: 10px 10px 30px #000;}
-
-/* Login container */
-#container{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 260px;
-  height: 260px;
-  border-radius: 5px;
-  background: rgba(3,3,3,0.25);
-  box-shadow: 1px 1px 50px #000;
-  display: none;
 }
-
-.close-btn{
-  position: absolute;
-  cursor: pointer;
-  font-family: 'Open Sans Condensed', sans-serif;
-  line-height: 18px;
-  top: 3px;
-  right: 3px;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  border-radius: 10px;
-  opacity: .2;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
 }
-
-.close-btn:hover{
-  opacity: .5;
-}
-
-/* Heading */
-h1{
-  font-family: 'Open Sans Condensed', sans-serif;
-  position: relative;
-  margin-top: 0px;
-  text-align: center;
-  font-size: 40px;
-  color: #ddd;
-  text-shadow: 3px 3px 10px #000;
-}
-
-/* Inputs */
-a,
-input{
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-decoration: none;
-  position: relative;
-  width: 80%;
-  display: block;
-  margin: 9px auto;
-  font-size: 17px;
-  color: #fff;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-  background: rgba(3,3,3,.1);
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-input:focus{
-  outline: none;
-  box-shadow: 3px 3px 10px #333;
-  background: rgba(3,3,3,.18);
-}
-
-/* Placeholders */
-::-webkit-input-placeholder {
-   color: #ddd;  }
-:-moz-placeholder { /* Firefox 18- */
-   color: red;  }
-::-moz-placeholder {  /* Firefox 19+ */
-   color: red;  }
-:-ms-input-placeholder {  
-   color: #333;  }
-
-/* Link */
-a{
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center;
-  padding: 4px 8px;
-  background: rgba(107,255,3,0.3);
-}
-
-a:hover{
-  opacity: 0.7;
-}
-
-#remember-container{
-  position: relative;
-  margin: -5px 20px;
-}
-
-.checkbox {
-  position: relative;
-  cursor: pointer;
-  appearance: none; /* รองรับเบราว์เซอร์มาตรฐาน */
-  -webkit-appearance: none; /* รองรับ Chrome, Safari */
-  -moz-appearance: none; /* รองรับ Firefox */
-  
-  padding: 5px;
-  border-radius: 4px;
-  background: rgba(3,3,3,.2);
-  display: inline-block;
-  width: 16px;
-  height: 15
-
-}
-
-.checkbox:checked:active {
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-}
-
-.checkbox:checked {
-  background: rgba(3,3,3,.4);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.5);
-	color: #fff;
-}
-
-.checkbox:checked:after {
-	content: '\2714';
-	font-size: 10px;
-	position: absolute;
-	top: 0px;
-	left: 4px;
-	color: #fff;
-}
-
-#remember{
-  position: absolute;
-  font-size: 13px;
-  font-family: 'Hind', sans-serif;
-  color: rgba(255,255,255,.5);
-  top: 7px;
-  left: 20px;
-}
-
-#forgotten{
-  position: absolute;
+.form .message {
+  margin: 15px 0 0;
+  color: #133214;
   font-size: 12px;
-  font-family: 'Hind', sans-serif;
-  color: rgba(255,255,255,.2);
-  right: 0px;
-  top: 8px;
-  cursor: pointer;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
-
-#forgotten:hover{
-  color: rgba(255,255,255,.6);
+.form .message a {
+  color: #367838;
+  text-decoration: none;
 }
-
-#forgotten-container{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 260px;
-  height: 180px;
-  border-radius: 10px;
-  background: rgba(3,3,3,0.25);
-  box-shadow: 1px 1px 50px #000;
+.form .register-form {
   display: none;
 }
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
 
-.orange-btn{
-  background: rgba(87,198,255,.5);
+  background: linear-gradient(160deg,  
+    rgb(150, 194, 111) 0%,  
+    rgb(104, 152, 76) 40%,  
+    rgb(68, 108, 48) 60%,  
+    rgb(42, 72, 26) 80%,  
+    rgb(17, 31, 10) 100%  
+  );
+
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
 }
